@@ -1,0 +1,19 @@
+[Unit]
+Description=Hadoop service
+After=syslog.target network.target remote-fs.target nss-lookup.target network-online.target sshd.service
+Requires=network-online.target
+
+[Service]
+User=hadoop
+Group=hadoop
+Type=forking
+ExecStart=/bin/bash -c "source ~/.profile && /cluster/hadoop-3.4.0/sbin/start-all.sh"
+ExecStop=/bin/bash -c "source ~/.profile && /cluster/hadoop-3.4.0/sbin/stop-all.sh"
+WorkingDirectory=/cluster/hadoop-3.4.0
+TimeoutStartSec=1min
+Restart=no
+RestartSec=30
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

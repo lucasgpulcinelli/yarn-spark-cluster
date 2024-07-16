@@ -1,0 +1,4 @@
+192.168.100.10 yarn-master
+192.168.100.11 yarn-worker-1
+192.168.100.12 yarn-worker-2
+192.168.100.13 yarn-worker-3
