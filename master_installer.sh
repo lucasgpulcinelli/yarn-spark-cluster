@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-apt-get update
-
 # create hadoop user
 groupadd -g 500 hadoop
 useradd -m -g 500 -s /bin/bash hadoop
 
 # install java
-apt-get -y install openjdk-17-jre-headless
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+wget https://builds.openlogic.com/downloadJDK/openlogic-openjdk-jre/8u412-b08/openlogic-openjdk-jre-8u412-b08-linux-x64.tar.gz -P /tmp
+tar xzf /tmp/openlogic-openjdk-jre-8u412-b08-linux-x64.tar.gz -C /cluster
+rm /tmp/openlogic-openjdk-jre-8u412-b08-linux-x64.tar.gz
+export JAVA_HOME=/cluster/openlogic-openjdk-jre-8u412-b08-linux-x64
 
 # add nodes ip hostname relations in /etc/hosts
 cat /tmp/hosts >> /etc/hosts
@@ -46,8 +46,7 @@ cp /tmp/spark-defaults.conf /cluster/spark-3.5.1-bin-hadoop3/conf/
 chown -R hadoop:hadoop /cluster
 
 # setup bashrc and profile for hadoop user
-cat /tmp/profile >> /home/hadoop/.profile
-echo 'export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin' >> /home/hadoop/.bashrc
+cat /tmp/profile > /home/hadoop/.bashrc
 
 # create systemd services
 cp /tmp/hadoop.service /tmp/spark.service /etc/systemd/system/

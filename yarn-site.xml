@@ -37,4 +37,12 @@
     <name>yarn.resourcemanager.address</name>
     <value>yarn-master:8050</value>
   </property>
+  <property>
+    <name>yarn.resourcemanager.webapp.address</name>
+    <value>yarn-master:8070</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.admin.address</name>
+    <value>yarn-master:8090</value>
+  </property>
 </configuration>

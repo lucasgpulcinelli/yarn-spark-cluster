@@ -1,4 +1,4 @@
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export JAVA_HOME=/cluster/openlogic-openjdk-jre-8u412-b08-linux-x64
 
 export HADOOP_HOME=/cluster/hadoop-3.4.0
 
