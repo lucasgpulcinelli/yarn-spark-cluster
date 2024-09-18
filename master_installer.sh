@@ -5,10 +5,10 @@ groupadd -g 500 hadoop
 useradd -m -g 500 -s /bin/bash hadoop
 
 # install java
-wget https://builds.openlogic.com/downloadJDK/openlogic-openjdk-jre/8u412-b08/openlogic-openjdk-jre-8u412-b08-linux-x64.tar.gz -P /tmp
-tar xzf /tmp/openlogic-openjdk-jre-8u412-b08-linux-x64.tar.gz -C /cluster
-rm /tmp/openlogic-openjdk-jre-8u412-b08-linux-x64.tar.gz
-export JAVA_HOME=/cluster/openlogic-openjdk-jre-8u412-b08-linux-x64
+wget https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u422-b05/OpenJDK8U-jdk_x64_linux_hotspot_8u422b05.tar.gz -P /tmp
+tar xzf /tmp/OpenJDK8U-jdk_x64_linux_hotspot_8u422b05.tar.gz -C /cluster
+rm /tmp/OpenJDK8U-jdk_x64_linux_hotspot_8u422b05.tar.gz
+export JAVA_HOME=/cluster/OpenJDK8U-jdk_x64_linux_hotspot_8u422b05
 
 # add nodes ip hostname relations in /etc/hosts
 cat /tmp/hosts >> /etc/hosts

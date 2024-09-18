@@ -1,4 +1,4 @@
-export JAVA_HOME=/cluster/openlogic-openjdk-jre-8u412-b08-linux-x64
+export JAVA_HOME=/cluster/OpenJDK8U-jdk_x64_linux_hotspot_8u422b05
 
 export HADOOP_HOME=/cluster/hadoop-3.4.0
 

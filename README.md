@@ -3,7 +3,7 @@
 This project contains a simple set of scripts and configuration files to deploy yarn in a set of virtual machines
 
 # Usage
-First, make sure you have your virtual machines set up with ssh installed and with root access via RSA keys. Also, install java 8 or 11 manually (this is not done automatically because distributions such as debian 12 do not have openjdk of these versions by default)
+First, make sure you have your virtual machines set up with ssh installed and with root access via RSA keys.
 
 After that, populate the ssh_hosts and hosts files. The first one should contain the externally accessible ip/hosts that you can directly execute `ssh root@<host>`, while the second are ip/hosts that can be accessed in the machines to locate each other (in the format expected by an /etc/hosts file).
 
